@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package p2p;
+
+//message sent
+message Request {
+    int32 self_id = 1;
+    string self_socket = 2;
+    int32 id = 3;
+    string socket = 4;
+    string info = 5;
+}
+
+//message respond
+message Respond {
+    int32 self_id = 1;
+    string self_socket = 2;
+    int32 id = 3;
+    string socket = 4;
+    string info = 5;
+}
+
+// comunication
+service P2P {
+    // functions to send info and respond
+    rpc Comunicate(Request) returns (Respond);
+    // connect to the ring
+    rpc Connect(Request) returns (Respond);
+    // searchID
+    rpc SearchID(Request) returns (Respond);
+}
