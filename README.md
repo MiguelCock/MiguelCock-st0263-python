@@ -76,18 +76,24 @@ una vez se ejecuta la aplicacion en diferentes computadores/local la aplicacion 
 
 # 5. otra información que considere relevante para esta actividad
 
-## VIDEO
+## https://www.canva.com/design/DAGPrOukUOk/zUwKuVWZY4X_W8Yorjvaow/edit?utm_content=DAGPrOukUOk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 # referencias
 
 ## <https://grpc.io/docs/languages/python/quickstart/>
+documentacion de gRPC para entender la libreria
 
 ## <https://github.com/grpc/grpc>
+ejemplos de implementacion del codigo basico de gRPC
 
 ## <https://replit.com/@MiguelKokc/p2p-py#p2p.proto>
+primer lugar en el que estuve prortamanco al no tener pc
 
 ## <https://chatgpt.com/>
+use chatgp para entender los eerores que tenia con las versiones y la ejecucion del programa
 
 ## <https://chatgpt.com/share/30520c0e-6465-429c-aba9-d03d447d728f>
+chat con chatgpt para entender como funciona chord
 
 ## <https://chatgpt.com/share/98d8e633-c822-4039-a501-8968542ae405>
+chat con chatgpt para entender como se implemente gRPC

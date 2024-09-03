@@ -13,9 +13,9 @@ class Peer(p2p_pb2_grpc.P2PServicer):
         
         self.files = [""]
 
-        "ID | SOCKET"
-        self.predecesor = [0, ""]
-        self.antecesor = [0, ""]
+        # ID | SOCKET
+        self.predecesor = [float("-Inf"), ""]
+        self.antecesor = [float("-Inf"), ""]
 
     def Comunicate(self, request, context):
         return p2p_pb2.Respond(self_id=self.id,
