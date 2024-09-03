@@ -1,6 +1,6 @@
 # info de la materia: ST0263-242 Topicos de telematica
 # Estudiante: Miguel Cock, macockc@eafit.edu.co
-# Pofesor: nombre, email-eafit
+# Pofesor: Alvaro Enrique Ospina Snajuan, aeospinas@eafit.edu.co
 
 # P2P con gRPC y CHORD
 
@@ -9,11 +9,11 @@ Desarrollo de una res distribuida de nodos p2p utilizando la arquitectura de **D
     
 ## 1.1. Que aspectos cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 
-Se utilizo gRPC para toda la comunicacion
+Se utilizo gRPC para toda la comunicacion, no utilce REST ya que me reducia el tiempo para entender la tecnologia de gRPC y ya que es mas lento en terminos generales que este, para que se pudiera lograr una mayor velocidad de envio de mensajes.
 
 ## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 
-No se logro que se mantuviera la consistencia del anillo de chord con los predecesores y antecesores, 
+No se logro que se mantuviera la consistencia del anillo de chord con los predecesores y antecesores como se especifica en la logica aunque si se logro una forma de este, se implemento parte de la funcionalidad de la finguer table pero tampoco es utilizada, se logro que los peer se conecten entre ellos y se manden informacion pero no se mandan archivos. Se logra guardar la informacion de los peer a los que uno esta conectado.
 
 # 2. información general de diseño de alto nivel, arquitectura, patrones, mejores prácticas utilizadas.
 
@@ -34,27 +34,34 @@ GRPC version: 1.66.1
 ``` bash
 python -m pip install gprcio
 
-python -m pip install gprcio-tools
+pip install gprcio-tools
 
 python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. p2p.proto
 
 python <ip> <port>
 ```
+
 ## detalles del desarrollo.
 
 
 
 ## detalles técnicos
 
+Se logro entender en rasgos generales la implementacion de Chord anque no se pudiera implementar en su totalidad
 
+Se logro entender la libreria de gRPC para la implementacion de las comunicaciones
 
 ## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
 
 Todo se pide por consola.
 
+``` bash
+python <ip> <port>
+```
+
 ## opcional - detalles de la organización del código por carpetas o descripción de algún archivo. (ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS IMPORTANTE DEL PROYECTO, comando 'tree' de linux)
 
-No se requiere crear directorios mas alla del directorio files
+No se requiere crear directorios mas alla del directorio donde se encuentran los archivos
 
 # 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
 
@@ -62,8 +69,9 @@ No se requiere crear directorios mas alla del directorio files
 
 En mi caso no tuve tiempo para probarlo en aws pero no es tan diferente de la maquina virtual de google con la que lo testeaba, toca eso si en aws abrir las gateways y pedir ips reservadas pero por la falta de tiempo y herramientas termine haciendo todo el testeo de la aplicacion en local host haciendo que cada puerto diferenciara el peer.
 
-
 ## una mini guia de como un usuario utilizaría el software o la aplicación
+
+una vez se ejecuta la aplicacion en diferentes computadores/local la aplicacion misma pedira al usuario por la informacion necesaria para su ejecucion.
 
 ## opcionalmente - si quiere mostrar resultados o pantallazos 
 
