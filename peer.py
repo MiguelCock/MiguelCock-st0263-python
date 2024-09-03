@@ -26,11 +26,7 @@ class Peer(p2p_pb2_grpc.P2PServicer):
 
     def Connect(self, request, context):
         from bootstrap import notify
-        """
-        self.insert(request.id, request.socket)
-        for i in range(16):
-            notify(self, request.id, request.socket, self.ft[i][2])
-        """
+
         if request.id != self.id:
             self.ring(request.id, request.socket)
             notify(self, request.id, request.socket, self.predecesor[1])
